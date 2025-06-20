@@ -1,0 +1,90 @@
+---
+description: Expert guidelines for React, TypeScript, and modern web development, covering component design, state management (Redux, Zustand, Jotai), performance, testing (Jest, React Testing Library), and best practices.
+globs:
+alwaysApply: false
+author: Cursor
+tags: react, typescript, javascript, frontend, best-practices, performance, state-management, testing, accessibility, web-development
+---
+
+You are an expert in TypeScript, React, and modern web development.
+
+  Code Style and Structure
+  - Write concise, technical TypeScript code with accurate examples.
+  - Use functional and declarative programming patterns; avoid classes.
+  - Prefer iteration and modularization over code duplication.
+  - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+  - Structure files: exported component, subcomponents, helpers, static content, types.
+
+  Naming Conventions
+  - Use lowercase with dashes for directories (e.g., components/auth-wizard).
+  - Favor named exports for components.
+
+  TypeScript Usage
+  - Use TypeScript for all code; prefer interfaces over types.
+  - Avoid enums; use maps instead.
+  - Use functional components with TypeScript interfaces.
+  - Use strict mode in TypeScript for better type safety.
+
+  Syntax and Formatting
+  - Use the "function" keyword for pure functions.
+  - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
+  - Use declarative JSX.
+  - Use Prettier for consistent code formatting.
+
+  UI and Styling
+  - Use styled-components or Tailwind CSS for component styling.
+  - Implement responsive design with media queries or utility classes.
+  - Use CSS custom properties for theming and dynamic styling.
+  - Ensure high accessibility (a11y) standards using ARIA roles and semantic HTML.
+
+  Performance Optimization
+  - Minimize the use of useState and useEffect; prefer context and reducers for state management.
+  - Use React.memo for components with static props to prevent unnecessary re-renders.
+  - Optimize lists with virtual scrolling or pagination.
+  - Implement code splitting and lazy loading for non-critical components.
+  - Profile and monitor performance using React DevTools and browser tools.
+
+  State Management
+  - Use React Context and useReducer for managing global state.
+  - Leverage react-query for data fetching and caching; avoid excessive API calls.
+  - For complex state management, consider using Zustand or Jotai.
+  - Handle URL search parameters using libraries like query-string.
+
+  Error Handling and Validation
+  - Use Zod for runtime validation and error handling.
+  - Implement proper error logging using Sentry or a similar service.
+  - Prioritize error handling and edge cases:
+    - Handle errors at the beginning of functions.
+    - Use early returns for error conditions to avoid deeply nested if statements.
+    - Avoid unnecessary else statements; use if-return pattern instead.
+    - Implement global error boundaries to catch and handle unexpected errors.
+
+  Testing
+  - Write unit tests using Jest and React Testing Library.
+  - Implement integration tests for critical user flows using Cypress or Playwright.
+  - Use mocks and stubs for external dependencies.
+  - Consider snapshot testing for components to ensure UI consistency.
+
+  Security
+  - Sanitize user inputs to prevent XSS attacks.
+  - Use secure HTTP headers and cookies.
+  - Ensure secure communication with APIs using HTTPS and proper authentication.
+
+  Internationalization (i18n)
+  - Use react-i18next or a similar library for internationalization and localization.
+  - Support multiple languages and RTL layouts.
+  - Ensure text scaling and font adjustments for accessibility.
+
+  Key Conventions
+  1. Follow React's official documentation for best practices and conventions.
+  2. Prioritize Web Vitals (LCP, FID, CLS) for performance optimization.
+  3. Use environment variables for configuration management.
+  4. Implement proper code splitting and lazy loading.
+  5. Ensure cross-browser compatibility by testing on multiple platforms.
+
+  API Documentation
+  - Use Swagger or OpenAPI for API documentation.
+  - Provide clear and concise API documentation for all endpoints.
+
+  Refer to React's documentation for detailed information on Hooks, Context, and other features for best practices.
+```
