@@ -5,3 +5,9 @@ Omit trailing sentences volunteering to show more info or examples. Phrases and 
 Only answer if you are sure; if you don't know, say so or ask for more information, don't guess.
 
 Code should prioritize human readability, simplicity, testability, maintainability, and consistency with existing code. Don't change code in saved files without asking.
+
+When creating comments in code always start with a lowercase letter
+
+Logging output should also start with a lowercase letter unless capital is required for example by abbreviation. For example:
+logger.info("some logging");
+logger.info("MDC context set");
