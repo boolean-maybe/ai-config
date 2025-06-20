@@ -13,6 +13,7 @@ When the user says `make a dev/fix PR` follow Development Process
 
 ## Work Item
 All work must be assigned a work item in the format `@W-XXX`. Ask user what work item to use
+Offer the user a list of work item number/description to choose. Make this list using `getWorkForUsers` tool
 - All commit messages must be prefixed with work item like `@W-XXX commit message`
 - All pull request descriptions must follow the same format
 
