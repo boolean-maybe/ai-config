@@ -56,3 +56,6 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 8. Pull request must have description beginning with `@W-XXX` where `W-XXX` is a work item name
 9. Resolve conflict in `gradle.properties` in favor of the release branch. Commit with a message `@W-XXX resolve version conflict` where `W-XXX` is a work item name
 10. After merge, tag the release in `master`
+
+## When complete
+When a PR is done - print its URL so it can easily be shared
