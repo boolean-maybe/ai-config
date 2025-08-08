@@ -1,8 +1,6 @@
-# AI Repository Analysis Prompt
+## AI Repository Analysis Prompt
 
 Please perform a comprehensive analysis of this Git repository to establish context for future AI-assisted development. Create a detailed report that will serve as a reference for all future AI interactions with this codebase.
-
-## Analysis Framework
 
 ### 1. Repository Overview
 - **Project Name & Description**: What does this project do?
@@ -36,7 +34,7 @@ Please perform a comprehensive analysis of this Git repository to establish cont
 - **Required Services**: External services, databases, APIs needed
 
 ### 5. Concepts & Interactions
-- **Core Concepts**: Document core concepts central to the application’s purpos eand their roles
+- **Core Concepts**: Document core concepts central to the application’s purpose and their roles
 - **Interactions and Dependencies**: Document how core concepts interact or depend on each other
 - **Construct a Conceptual Overview**: Build a concise representation of the main entities and their roles, showing how they collaborate
 
@@ -112,11 +110,34 @@ Please perform a comprehensive analysis of this Git repository to establish cont
 - **Best Practices**: Project-specific best practices to follow
 - **Pitfalls**: Common mistakes to avoid
 
-## Output Format
+### 16. Major Workflows & Orchestrations
+- **Workflow Catalog**: List all major workflows with a one-line purpose each
+  - name, owner, trigger type (schedule/event/user/cron), frequency/cron, criticality
+- **Triggering Conditions**: What initiates each workflow
+  - schedules (cron), event sources (queues, webhooks), user actions, system timers
+- **Input/Output Artifacts**: What data is consumed and produced
+  - input sources (APIs, DB tables, files), output destinations (stores, services, topics)
+- **Processing Steps**: Ordered stages and services involved
+  - key functions/modules, external calls, transformations
+- **Data Persistence**: Where intermediate and final results are stored
+  - databases, object storage, caches, topics/queues, search indexes
+- **Downstream Consumers**: Who reads/uses the outputs and how
+  - services, reports, APIs, UI components, scheduled readers
+- **Operational Characteristics**: SLAs, timeouts, concurrency, idempotency
+- **Failure Handling**: Retries, dead-letter queues, compensations, alerts
+- **Observability**: Metrics, logs, traces, dashboards, alert rules
+- **Dependencies**: Upstream inputs and downstream impacts; ordering constraints
+- **Runbooks**: Links to remediation steps, on-call notes, rollback procedures
 
+- Suggested deliverables per workflow:
+  - brief description (1–3 sentences)
+  - table with trigger, inputs, steps, stores, outputs, consumers, schedule, owner
+  - Mermaid diagram (flowchart or sequence) mapping the end-to-end flow
+
+## Output Format
 Structure your analysis as a comprehensive markdown document with:
 - Clear headings and subheadings
-- Mermaid diagrams where appropriate
+- Mermaid diagrams where appropriate (include for each major workflow)
 - Code examples where relevant
 - File paths and line numbers for references
 - Links to relevant files or documentation
@@ -124,17 +145,18 @@ Structure your analysis as a comprehensive markdown document with:
 - Tables for structured data where appropriate
 
 ## Instructions for Analysis
+1. Start with the README and any documentation files
+2. Examine build files and similar dependency files
+3. Analyze the directory structure systematically
+4. Look for configuration files (.env examples, config directories)
+5. Examine entry points (main.js, app.py, etc.)
+6. Study the database layer (models, migrations, schemas)
+7. Review test files to understand testing patterns
+8. Check CI/CD configuration (.github/workflows, .gitlab-ci.yml)
+9. Analyze key business logic files
+10. Look for security-related code (auth, validation, middleware)
+11. Identify and document major workflows end-to-end (per section 16)
 
-1. **Start with the README** and any documentation files
-2. **Examine build files** and similar dependency files
-3. **Analyze the directory structure** systematically
-4. **Look for configuration files** (.env examples, config directories)
-5. **Examine entry points** (main.js, app.py, etc.)
-6. **Study the database layer** (models, migrations, schemas)
-7. **Review test files** to understand testing patterns
-8. **Check CI/CD configuration** (.github/workflows, .gitlab-ci.yml)
-9. **Analyze key business logic** files
-10. **Look for security-related code** (auth, validation, middleware)
 
 Save this analysis as `doc/CONTEXT.md` in the repository root for future reference by AI tools.
 
