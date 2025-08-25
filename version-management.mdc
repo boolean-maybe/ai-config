@@ -15,7 +15,7 @@ When the user says `make a dev/fix PR` follow Development Process
 All work must be assigned a work item in the format `@W-XXX`. Ask user what work item to use
 Offer the user a list of work item number/description to choose. Make this list using `getWorkForUsers` tool
 - All commit messages must be prefixed with work item like `@W-XXX commit message`
-- All pull request descriptions must follow the same format
+- All pull request titles and descriptions must follow the same format
 
 ## Version File
 The project version is managed in [gradle.properties](mdc:gradle.properties). This file contains:
@@ -28,6 +28,8 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 - Release versions remove the `-SNAPSHOT` suffix (e.g., `0.3.0`)
 
 ## Branch Naming
+- Branch names should follow `prefix/branch-name` pattern where `prefix` is one of `fix`, `feature`, `release`
+- `branch-name` part is in lowercase using dashes and describes fix or feature. It should not include work item      
 - Feature branches: `feature/*`
 - Bugfix branches: `fix/*`
 - Release branches: `release/*` (e.g., `release/0.3.0`)
@@ -35,7 +37,7 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 
 ## Commit Message and Pull Request description
 - Commit message should always start with `@W-XXX` where `W-XXX` is work item name. Ask user for this name
-- Pull request description should follow the same format
+- Pull request title and description should follow the same format
 - After `@W-XXX` commit message should include brief description on the same line then empty line then longer description
 
 ## Development Process
