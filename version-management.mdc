@@ -10,6 +10,7 @@ Description: Use when asked to create a pull request or make a release
 
 When the user says `make a release` follow Release Process
 When the user says `make a dev/fix PR` follow Development Process
+When the user asks what the current master version is check `projectVersion` in `gradle.properties` in `master` branch by using `git fetch origin master && git show origin/master:gradle.properties`
 
 ## Work Item
 All work must be assigned a work item in the format `@W-XXX`. Ask user what work item to use
@@ -58,7 +59,7 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 3. Check current project version in `gradle.properties` in `origin/master` by using `git fetch origin master && git show origin/master:gradle.properties`
 4. Update version in `gradle.properties` to be current `origin/master` version incremented by 1. For example, if the current version in `gradle.properties` in `origin/master` is 1.2.3 edit local `gradle.properties` to make it 1.2.4
 5. Commit with a commit message `@W-XXX fix version` where `W-XXX` is a work item name
-6. Merget `master` into this branch. This will create conflict in `gradle.properties`
+6. Merge `master` into this branch. This will create conflict in `gradle.properties`
 7. Resolve conflict in `gradle.properties` in favor of the release branch. Commit with a message `@W-XXX resolve version conflict` where `W-XXX` is a work item name
 8. Push to remote branch
 9. Create pull request to `master` following pull request guidelines
