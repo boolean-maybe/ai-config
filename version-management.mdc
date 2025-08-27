@@ -65,4 +65,6 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 9. Create pull request to `master` following pull request guidelines
 
 ## When complete
-When a PR is done - print its URL so it can easily be shared
+When a PR is done:
+- print its URL so it can easily be shared
+- post in channel C04R5DA87G9 "<@WAWQGMTPA> Vadim Bobrov would like you to review a PR: " and add a URL to PR
