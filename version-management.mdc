@@ -45,6 +45,7 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 - Commit message should always start with `@W-XXX` where `W-XXX` is work item name. Ask user for this name
 - Pull request title and description should follow the same format
 - After `@W-XXX` commit message should include brief description on the same line then empty line then longer description
+- After `@W-XXX` commit message, pull request title and descriptions should start with a lowercase letter
 
 ## Development Process
 1. Run `./gradlew clean build` and verify it passes. Stop here on any error
