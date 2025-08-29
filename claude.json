@@ -37,6 +37,7 @@
   "tool_config": {
     "shell": {
       "allowed_commands": [
+        "find",
         "grep",
         "./gradlew build",
         "./gradlew test",
