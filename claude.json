@@ -37,23 +37,26 @@
   "tool_config": {
     "shell": {
       "allowed_commands": [
-        "find",
-        "grep",
-        "./gradlew build",
-        "./gradlew test",
-        "./gradlew clean",
-        "./gradlew check",
-        "./gradlew tasks"
+        "Bash(grep:*)",
+        "Bash(find:*)",
+        "Bash(gh pr list:*)",
+        "Bash(gh pr view:*)",
+        "Bash(gh pr diff:*)",
+        "Bash(./gradlew build:*)",
+        "Bash(./gradlew test:*)",
+        "Bash(./gradlew clean)",
+        "Bash(./gradlew check:*)",
+        "Bash(./gradlew tasks:*)"
       ],
       "blocked_commands": [
-        "rm",
-        "sudo",
-        "chmod",
-        "chown"
+        "Bash(rm:*)",
+        "Bash(sudo:*)",
+        "Bash(chmod:*)",
+        "Bash(chown:*)"
       ],
       "require_approval": [
-        "./gradlew bootRun",
-        "./gradlew run"
+        "Bash(./gradlew bootRun)",
+        "Bash(./gradlew run)"
       ]
     }
   },
