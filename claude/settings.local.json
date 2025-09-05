@@ -3,6 +3,10 @@
     "allow": [
       "Bash(grep:*)",
       "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
@@ -13,12 +17,12 @@
       "Bash(./gradlew tasks:*)"
     ],
     "deny": [
+    ],
+    "ask": [
       "Bash(rm:*)",
       "Bash(sudo:*)",
       "Bash(chmod:*)",
       "Bash(chown:*)"
-    ],
-    "ask": [
       "Bash(./gradlew bootRun)",
       "Bash(./gradlew run)"
     ]
