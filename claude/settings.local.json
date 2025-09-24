@@ -23,7 +23,7 @@
       "Bash(rm:*)",
       "Bash(sudo:*)",
       "Bash(chmod:*)",
-      "Bash(chown:*)"
+      "Bash(chown:*)",
       "Bash(./gradlew bootRun)",
       "Bash(./gradlew run)"
     ]
