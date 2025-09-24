@@ -46,6 +46,7 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 - Pull request title and description should follow the same format
 - After `@W-XXX` commit message should include brief description on the same line then empty line then longer description
 - After `@W-XXX` commit message, pull request title and descriptions should start with a lowercase letter
+- Commit message and pull request description should only describe the functionality and should not include any "generated with" or "co-authored by" type of text
 
 ## Development Process
 1. Run `./gradlew clean build` and verify it passes. Stop here on any error
