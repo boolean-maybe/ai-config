@@ -37,6 +37,7 @@
   "tool_config": {
     "shell": {
       "allowed_commands": [
+        "Bash(cat:*)",
         "Bash(grep:*)",
         "Bash(find:*)",
         "Bash(gh pr list:*)",
