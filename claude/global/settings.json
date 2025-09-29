@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "ANTHROPIC_BEDROCK_BASE_URL": "https://xxx",
+    "ANTHROPIC_AUTH_TOKEN": "xxx",
+    "CLAUDE_CODE_SKIP_BEDROCK_AUTH": "1",
+    "CLAUDE_CODE_USE_BEDROCK": "1"
+  },
+  "model": "sonnet",
+  "feedbackSurveyState": {
+    "lastShownTime": 1754075059102
+  },
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(git fetch:*)",
+      "Bash(aws eks describe:*)",
+      "Bash(aws s3 ls:*)",
+      "Bash(aws ssm get:*)",
+      "Bash(kubectl get:*)",
+      "Bash(kubectl describe:*)",
+      "Bash(kubectl top:*)",
+      "Bash(helm list:*)",
+      "Bash(helm search:*)",
+      "Bash(helm status:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(./gradlew build:*)",
+      "Bash(./gradlew test:*)",
+      "Bash(./gradlew clean)",
+      "Bash(./gradlew check:*)",
+      "Bash(./gradlew tasks:*)"
+    ],
+    "deny": [
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(sudo:*)",
+      "Bash(chmod:*)",
+      "Bash(chown:*)",
+      "Bash(./gradlew bootRun)",
+      "Bash(./gradlew run)"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "say \"Claude code needs your attention\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "say \"Main Claude code finished\""
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "say \"Claude code subagent finished\""
+          }
+        ]
+      }
+    ]
+  }
+}
+
+

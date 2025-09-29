@@ -83,6 +83,15 @@
         "SLACK_TEAM_ID": "T01GST6QY0G",
         "SLACK_CHANNEL_IDS": "C04R5DA87G9, C02URTJ5XD4"
       }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--headless",
+        "--browser",
+        "chrome"
+      ]
     }
   },
   "firstStartTime": "2025-07-29T20:09:18.722Z",
