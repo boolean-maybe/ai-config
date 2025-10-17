@@ -23,11 +23,15 @@ and the user can choose to respond with simply 1 or W-1234567
 - All commit messages must be prefixed with work item like `@W-XXX commit message`
 - All pull request titles and descriptions must follow the same format
 
+Only work item's name in the form of `W-XXX` is needed. No need to retrieve its details
+or description. No need to implement anything in the description
+
 ## Version File
-The project version is managed in [gradle.properties](mdc:gradle.properties). This file contains:
-- Project version number
-- Project group ID
-- Dependencies and their versions
+## Version File
+The project version is different depending on project language:
+- Python - pyproject.toml
+- Go - VERSION
+- Java gradle.properties
 
 ## Version Format
 - Development versions use the `-SNAPSHOT` suffix (e.g., `0.2.7-SNAPSHOT`)
@@ -49,22 +53,22 @@ The project version is managed in [gradle.properties](mdc:gradle.properties). Th
 - Commit message and pull request description should only describe the functionality and should not include any "generated with" or "co-authored by" type of text
 
 ## Development Process
-1. Run `./gradlew clean build` and verify it passes. Stop here on any error
+1. Run build depending on what language the project is in. For java `./gradlew clean build` and verify it passes. Stop here on any error
 2. Create feature or fix branch from `develop`
 3. Add and commit all edited files following commit message guidelines
 4. Push to remote
-5. Create pull request to `develop` following pull request guidelines
+5. Create pull request to `develop` branch following pull request guidelines (`gh pr create --base develop ...`)
 
 ## Release Process
-1. Run `./gradlew clean build` and verify it passes. Stop here on any error
+1. Run build depending on what language the project is in. For java `./gradlew clean build` and verify it passes. Stop here on any error
 2. Create release branch from `develop`: `release/x.y.z`
-3. Check current project version in `gradle.properties` in `origin/master` by using `git fetch origin master && git show origin/master:gradle.properties`
-4. Update version in `gradle.properties` to be current `origin/master` version incremented by 1. For example, if the current version in `gradle.properties` in `origin/master` is 1.2.3 edit local `gradle.properties` to make it 1.2.4
+3. Check current project version in version file in `origin/master` by using `git fetch origin master && git show origin/master:VERSION-FILE` where VERSION-FILE is version file
+4. Update version in version file to be current `origin/master` version incremented by 1. For example, if the current version in version file in `origin/master` is 1.2.3 edit local version file to make it 1.2.4
 5. Commit with a commit message `@W-XXX fix version` where `W-XXX` is a work item name
-6. Merge `master` into this branch. This will create conflict in `gradle.properties`
-7. Resolve conflict in `gradle.properties` in favor of the release branch. Commit with a message `@W-XXX resolve version conflict` where `W-XXX` is a work item name
+6. Merge `master` into this branch. This will create conflict in version file
+7. Resolve conflict in version file in favor of the release branch. Commit with a message `@W-XXX resolve version conflict` where `W-XXX` is a work item name
 8. Push to remote branch
-9. Create pull request to `master` following pull request guidelines
+9. Create pull request to `master` branch following pull request guidelines
 
 ## When complete
 When a PR is done:
