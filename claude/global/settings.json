@@ -12,6 +12,13 @@
   },
   "permissions": {
     "allow": [
+      "Skill(git)",
+      "WebFetch(domain:*)",
+      "mcp__GUS__getCurrentUser",
+      "mcp__GUS__getWorkForUsers",
+      "Bash(curl:*)",
+      "Bash(cd:*)",
+      "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
@@ -19,7 +26,10 @@
       "Bash(sort:*)",
       "Bash(head:*)",
       "Bash(tail:*)",
+      "Bash(mkdir:*)",
       "Bash(git fetch:*)",
+      "Bash(git status:*)",
+      "Bash(git push:*)",
       "Bash(aws eks describe:*)",
       "Bash(aws s3 ls:*)",
       "Bash(aws ssm get:*)",
@@ -34,9 +44,11 @@
       "Bash(gh pr diff:*)",
       "Bash(./gradlew build:*)",
       "Bash(./gradlew test:*)",
-      "Bash(./gradlew clean)",
+      "Bash(./gradlew clean:*)",
+      "Bash(./gradlew clean build:*)",
       "Bash(./gradlew check:*)",
-      "Bash(./gradlew tasks:*)"
+      "Bash(./gradlew tasks:*)",
+      "Bash(./gradlew dependencies:*)"
     ],
     "deny": [
     ],

@@ -1,7 +1,7 @@
 ---
 name: dev-pr
 description: "Create a development PR"
-allowed-tools: Bash(git add:*), Bash(git push:*)
+allowed-tools: Bash(gh pr:*), Bash(git add:*), Bash(git merge:*), Bash(git push:*), "mcp__slack__slack_post_message"
 personas: [Githup PR creator]
 ---
 
@@ -10,6 +10,7 @@ personas: [Githup PR creator]
 ## Work Item
 All work must be assigned a work item in the format `@W-XXX`. Ask user what work item to use
 Offer the user a list of work item number/description to choose. Make this list using `getWorkForUsers` tool
+Only pull those that are in `In Progress` status
 Number work items and allow selecting by number so that the user does not need to type entire work item, for example:
 1. W-1234567
 2. W-7654321

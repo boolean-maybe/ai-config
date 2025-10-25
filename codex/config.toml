@@ -1,0 +1,33 @@
+model = "gpt-5"
+model_reasoning_effort = "medium"
+
+[projects."/Users/vbobrov/IdeaProjects/patching"]
+trust_level = "trusted"
+
+# STDIO server
+[mcp_servers.context7]
+command = "npx"
+args    = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.context7.env]
+MY_ENV_VAR = "MY_ENV_VALUE"
+
+# HTTP (streamable) server
+#[mcp_servers.figma]
+#url = "https://mcp.figma.com/mcp"
+
+[mcp_servers.GUS]
+command = "/opt/homebrew/bin/node"
+args    = ["/Users/vbobrov/IdeaProjects/mcp-server-gus/mcp-server.js"]
+
+[mcp_servers.GUS.env]
+SFDX_TARGET_ALIAS = "GUS"
+
+[mcp_servers.slack]
+command = "npx"
+args    = ["-y", "@modelcontextprotocol/server-slack"]
+
+[mcp_servers.slack.env]
+SLACK_BOT_TOKEN = "xxx"
+SLACK_TEAM_ID = "T01GST6QY0G"
+SLACK_CHANNEL_IDS = "C04R5DA87G9, C02URTJ5XD4"

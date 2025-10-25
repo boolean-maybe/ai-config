@@ -1,11 +1,10 @@
 ---
-name: dev-pr
-description: "Create a development PR"
-allowed-tools: Bash(gh pr:*), Bash(git add:*), Bash(git merge:*), Bash(git push:*), "mcp__slack__slack_post_message"
-personas: [Githup PR creator]
+name: git
+description: create git commits, git branches, and GitHub pull requests, release and development pull request procedures
+allowed-tools: Read, Grep, Glob
 ---
 
-# Make a release
+# git and github procedures
 
 ## Work Item
 All work must be assigned a work item in the format `@W-XXX`. Ask user what work item to use
@@ -14,13 +13,22 @@ Only pull those that are in `In Progress` status
 Number work items and allow selecting by number so that the user does not need to type entire work item, for example:
 1. W-1234567
 2. W-7654321
-and the user can choose to respond with simply 1 or W-1234567
-
-- All commit messages must be prefixed with work item like `@W-XXX commit message`
-- All pull request titles and descriptions must follow the same format
+   and the user can choose to respond with simply 1 or W-1234567
 
 Only work item's name in the form of `W-XXX` is needed. No need to retrieve its details
 or description. No need to implement anything in the description
+
+## git commit messages
+All commit messages must be prefixed with work item like `@W-XXX commit message`
+After `@W-XXX` commit message should include brief description on the same line then empty line then longer description
+After `@W-XXX` commit message should start with a lowercase letter
+Commit message should only describe the functionality and should not include any "generated with" or "co-authored by" type of text
+
+## github pull requests
+All pull request titles and descriptions must be prefixed with work item like `@W-XXX commit message`
+The work item selected for the commit should also be used for pull requests
+After `@W-XXX` pull request title and descriptions should start with a lowercase letter
+Pull request description should only describe the functionality and should not include any "generated with" or "co-authored by" type of text
 
 ## Version File
 The project version is different depending on project language:
@@ -35,19 +43,25 @@ The project version is different depending on project language:
 ## Branch Naming
 - Branch names should follow `prefix/branch-name` pattern where `prefix` is one of `fix`, `feature`, `release`
 - `branch-name` part is in lowercase using dashes and describes fix or feature. It should not include work item
-- Feature branches: `feature/*`
-- Bugfix branches: `fix/*`
-- Release branches: `release/*` (e.g., `release/0.3.0`)
+- Feature branches: `feature/feature-description`
+- Bugfix branches: `fix/fix-description`
+- Release branches: `release/x.y.z` where x, y, z are numbers (e.g., `release/0.3.0`)
 - Main branches: `master` and `develop`
 
-## Commit Message and Pull Request description
-- Commit message should always start with `@W-XXX` where `W-XXX` is work item name. Ask user for this name
-- Pull request title and description should follow the same format
-- After `@W-XXX` commit message should include brief description on the same line then empty line then longer description
-- After `@W-XXX` commit message, pull request title and descriptions should start with a lowercase letter
-- Commit message and pull request description should only describe the functionality and should not include any "generated with" or "co-authored by" type of text
+## Development Process
+Development process or dev PR is a procedure when the user wants to branch a feature or a fix branch off `develop`
+push changes and create a PR to `develop`
+
+1. Run build depending on what language the project is in. For java `./gradlew clean build` and verify it passes. Stop here on any error
+2. Create feature or fix branch from `develop`
+3. Add and commit all edited files following commit message guidelines
+4. Push to remote
+5. Create pull request to `develop` branch following pull request guidelines (`gh pr create --base develop ...`)
 
 ## Release Process
+Release process or release PR is a procedure when the user wants to create a release branch off `develop`
+assign a new version to the project without `-SNAPSHOT` and create a PR to `master`
+
 1. Run build depending on what language the project is in. For java `./gradlew clean build` and verify it passes. Stop here on any error
 2. Create release branch from `develop`: `release/x.y.z`
 3. Check current project version in version file in `origin/master` by using `git fetch origin master && git show origin/master:VERSION-FILE` where VERSION-FILE is version file
@@ -62,4 +76,3 @@ The project version is different depending on project language:
 When a PR is done:
 - print its URL so it can easily be shared
 - post in channel C04R5DA87G9 "<@WAWQGMTPA> Vadim Bobrov would like you to review a PR: " and add a URL to PR
-
