@@ -1,6 +1,8 @@
 #!/bin/zsh
 
 # Claude Code
+cp claude/global/CLAUDE.md ~/.claude/
+
 rm -rf ~/.claude/commands
 cp -R claude/global/commands ~/.claude/
 
