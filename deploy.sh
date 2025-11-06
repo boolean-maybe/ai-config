@@ -8,7 +8,11 @@ rm -rf ~/.claude/agents
 cp -R claude/global/agents ~/.claude/
 cp -R claude/global/skills/* ~/.claude/skills/
 
-cp claude/global/claude.json ~/.claude/
+# THIS DOES NOT GO INTO ~/.claude instead directly in home
+cp claude/global/claude.json ~/.claude.json
+cp claude/global/statusline.sh ~/.claude/
+
+# NOT COPYING TO NOT OVERWRITE KEYS
 #cp claude/global/settings.json ~/.claude/
 
 # Codex

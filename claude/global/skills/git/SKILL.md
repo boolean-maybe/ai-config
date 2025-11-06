@@ -1,7 +1,7 @@
 ---
 name: git
 description: create git commits, git branches, and GitHub pull requests, release and development pull request procedures
-allowed-tools: Read, Grep, Glob
+allowed-tools: Read, Grep, Glob, Update, "Bash(gh merge origin/master:*)", "Bash(gh pr create:*)"
 ---
 
 # git and github procedures
@@ -60,12 +60,13 @@ To verify a build run command appropriate for the repo language
 Development process or dev PR is a procedure when the user wants to branch a feature or a fix branch off `develop`
 push changes and create a PR to `develop`
 
-1. Run build depending on what language the project is in. Stop here on any error
-2. If project has Dockerfile verify docker build
-3. Create feature or fix branch from `develop`
-4. Add and commit all edited files following commit message guidelines
-5. Push to remote
-6. Create pull request to `develop` branch following pull request guidelines (`gh pr create --base develop ...`)
+1. Assume all changes have been done - no need to check out or pull `develop` branch
+2. Run build depending on what language the project is in. Stop here on any error
+3. If project has Dockerfile verify docker build
+4. Create feature or fix branch from `develop`
+5. Add and commit all edited files following commit message guidelines
+6. Push to remote
+7. Create pull request to `develop` branch following pull request guidelines (`gh pr create --base develop ...`)
 
 ## Release Process
 Release process or release PR is a procedure when the user wants to create a release branch off `develop`
@@ -77,7 +78,7 @@ assign a new version to the project without suffix and create a PR to `master`
 4. Check current project version in version file in `origin/master` by using `git fetch origin master && git show origin/master:VERSION-FILE` where VERSION-FILE is version file
 5. Update version in version file to be current `origin/master` version incremented by 1. For example, if the current version in version file in `origin/master` is 1.2.3 edit local version file to make it 1.2.4
 6. Commit with a commit message `@W-XXX fix version` where `W-XXX` is a work item name
-7. Merge `master` into this branch. This will create conflict in version file
+7. Merge `origin/master` into this branch. This will create conflict in version file
 8. Resolve conflict in version file in favor of the release branch. Commit with a message `@W-XXX resolve version conflict` where `W-XXX` is a work item name
 9. Push to remote branch
 10. Create pull request to `master` branch following pull request guidelines

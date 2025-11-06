@@ -10,6 +10,11 @@
   "feedbackSurveyState": {
     "lastShownTime": 1754075059102
   },
+  "statusLine": {
+      "type": "command",
+      "command": "~/.claude/statusline.sh",
+      "padding": 0
+  },
   "permissions": {
     "allow": [
       "Skill(git)",
@@ -30,18 +35,23 @@
       "Bash(git fetch:*)",
       "Bash(git status:*)",
       "Bash(git push:*)",
+      "Bash(git merge origin/master:*)",
       "Bash(aws eks describe:*)",
+      "Bash(aws rds download:*)",
       "Bash(aws s3 ls:*)",
       "Bash(aws ssm get:*)",
+      "Bash(docker build:*)",
       "Bash(kubectl get:*)",
       "Bash(kubectl describe:*)",
       "Bash(kubectl top:*)",
       "Bash(helm list:*)",
       "Bash(helm search:*)",
       "Bash(helm status:*)",
+      "Bash(gh pr create:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
+      "Bash(uv sync && python -m py_compile noreact/*.py)",
       "Bash(./gradlew build:*)",
       "Bash(./gradlew test:*)",
       "Bash(./gradlew clean:*)",
@@ -97,5 +107,3 @@
     ]
   }
 }
-
-
