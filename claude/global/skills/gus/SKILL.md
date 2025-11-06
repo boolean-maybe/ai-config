@@ -22,6 +22,6 @@ Create work item using `createWorkItem` tool
 if not specified prompt for subject and optional details and attachments
 If no details provided leave emtpy
 if no attachments specified do not attach anything
-When done output:
-- work item number in format W-xxxx
-- direct URL to the new work item
+**REQUIRED OUTPUT - DO NOT SKIP:**
+- work item number in format W-XXXXXXX (e.g., W-20149403)
+- direct URL in format: https://gus.my.salesforce.com/{workItemId}
