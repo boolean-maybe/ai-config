@@ -6,6 +6,8 @@ allowed-tools: Read, Grep, Glob, Update, "Bash(gh merge origin/master:*)", "Bash
 
 # git and github procedures
 
+read [Version file](~/.claude/common/version-file.md) to understand what a version file and version format is
+
 ## Work Item
 All work must be assigned a work item in the format `@W-XXX`. Ask user what work item to use
 Offer the user a list of work item number/description to choose. Make this list using `getWorkForUsers` tool
@@ -29,18 +31,6 @@ All pull request titles and descriptions must be prefixed with work item like `@
 The work item selected for the commit should also be used for pull requests
 After `@W-XXX` pull request title and descriptions should start with a lowercase letter
 Pull request description should only describe the functionality and should not include any "generated with" or "co-authored by" type of text
-
-## Version File
-The project version is different depending on project language:
-- Python - pyproject.toml
-- Go - VERSION
-- Java gradle.properties
-
-## Version Format
-Other than `master` branch all branches should have project version with suffix. 
-Suffix depends on the language: java should use `-SNAPSHOT` python `.dev0`
-- Development/feature/fix versions use suffix (e.g., `0.2.7-SNAPSHOT` or `1.1.1.dev0`)
-- Release versions remove suffix (e.g., `0.3.0`)
 
 ## Branch Naming
 - Branch names should follow `prefix/branch-name` pattern where `prefix` is one of `fix`, `feature`, `release`

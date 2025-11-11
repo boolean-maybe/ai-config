@@ -66,7 +66,7 @@
       "type": "stdio",
       "command": "/opt/homebrew/bin/node",
       "args": [
-        "/Users/vbobrov/IdeaProjects/gus-mcp/mcp-server-gus/mcp-server.js"
+        "/Users/vbobrov/IdeaProjects/mcp-server-gus/mcp-server.js"
       ],
       "env": {
         "SFDX_TARGET_ALIAS": "GUS"

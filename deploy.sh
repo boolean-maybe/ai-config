@@ -8,7 +8,12 @@ cp -R claude/global/commands ~/.claude/
 
 rm -rf ~/.claude/agents
 cp -R claude/global/agents ~/.claude/
-cp -R claude/global/skills/* ~/.claude/skills/
+
+rm -rf ~/.claude/common
+cp -R claude/global/common ~/.claude/
+
+rm -rf ~/.claude/skills
+cp -R claude/global/skills ~/.claude/
 
 # THIS DOES NOT GO INTO ~/.claude instead directly in home
 cp claude/global/claude.json ~/.claude.json
@@ -28,3 +33,8 @@ cp -R claude/global/commands/* ~/.codex/prompts/
 
 rm -rf ~/.codex/config.toml
 cp codex/config.toml ~/.codex/
+
+
+# Opencode
+
+cp opencode/opencode.json ~/.config/opencode/

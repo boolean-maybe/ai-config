@@ -4,7 +4,8 @@
     "ANTHROPIC_BEDROCK_BASE_URL": "https://xxx",
     "ANTHROPIC_AUTH_TOKEN": "xxx",
     "CLAUDE_CODE_SKIP_BEDROCK_AUTH": "1",
-    "CLAUDE_CODE_USE_BEDROCK": "1"
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL":"us.anthropic.claude-haiku-4-5-20251001-v1:0"
   },
   "model": "sonnet",
   "feedbackSurveyState": {
