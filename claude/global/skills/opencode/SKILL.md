@@ -6,7 +6,8 @@ allowed-tools: Read, Grep, Glob, Bash, Edit, Write
 
 # Using OpenCode CLI for Repository Analysis and Modification
 
-OpenCode is a powerful CLI tool for analyzing and modifying entire repositories with AI assistance. Use `opencode run` to leverage OpenCode's capabilities for codebase analysis and modifications.
+OpenCode is a powerful CLI tool for analyzing and modifying entire repositories with AI assistance. 
+Use `opencode run` to leverage OpenCode's capabilities for codebase analysis and modifications.
 
 ## Basic Command Structure
 

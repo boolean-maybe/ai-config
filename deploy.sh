@@ -3,6 +3,9 @@
 # Claude Code
 cp claude/global/CLAUDE.md ~/.claude/
 
+rm -rf ~/.claude/scripts
+cp -R scripts ~/.claude/
+
 rm -rf ~/.claude/commands
 cp -R claude/global/commands ~/.claude/
 
@@ -37,4 +40,4 @@ cp codex/config.toml ~/.codex/
 
 # Opencode
 
-cp opencode/opencode.json ~/.config/opencode/
+#cp opencode/opencode.json ~/.config/opencode/
