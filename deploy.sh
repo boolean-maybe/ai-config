@@ -1,6 +1,9 @@
 #!/bin/zsh
 
 # Claude Code
+# copy over only permission.allow section to setting.json
+jq --argjson allow "$(jq '.permissions.allow' claude/global/settings.json)" '.permissions.allow = $allow' ~/.claude/settings.json > /tmp/s.json && mv /tmp/s.json ~/.claude/settings.json
+
 cp claude/global/CLAUDE.md ~/.claude/
 
 rm -rf ~/.claude/scripts
