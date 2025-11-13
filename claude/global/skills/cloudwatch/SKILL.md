@@ -1,7 +1,7 @@
 ---
 name: cloudwatch
 description: use CloudWatch to retrieve logs and analyze failures
-allowed-tools: Read, Grep, Glob, Update, "Bash(ls:*), "Bash(aws logs:*)"
+allowed-tools: Read, Grep, Glob, Update, "Bash(ls:*), "Bash(aws logs:*), "Bash(~/.claude/skills/cloudwatch/scripts/get_pod_logs.sh:*)"
 ---
 
 # Patcher job logs
